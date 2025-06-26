@@ -1,0 +1,3 @@
+FROM trafex/php-nginx
+
+RUN docker-php-ext-install pdo_mysql
