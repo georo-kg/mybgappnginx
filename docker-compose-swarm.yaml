@@ -1,16 +1,16 @@
 services:
     web:
-        image: georo/bgappapache-web
+        image: georo/bgappnginx-web
         deploy:
-            replicas: 5
+            replicas: 3
         ports:
-            - 8080:80
+            - 80:8080
         volumes:
-            - "/home/vagrant/mybgapp/web:/var/www/html:ro"
+            - "/home/vagrant/mybgappnginx/web:/var/www/html:ro"
         networks:
             - app-network
     db:
-        image: georo/bgappapache-db
+        image: georo/bgappnginx-db
         networks:
             - app-network
         environment:
